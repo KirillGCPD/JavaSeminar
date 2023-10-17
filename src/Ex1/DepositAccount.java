@@ -1,7 +1,6 @@
 package Ex1;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
 public class DepositAccount extends Account{
     private LocalDate lastWithdraw;

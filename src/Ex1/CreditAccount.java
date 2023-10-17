@@ -35,7 +35,7 @@ public class CreditAccount extends Account{
            System.out.printf("Удержана комиссия: %.2f\n",commissionAmount);
         }
         else {
-            System.out.printf("Снятие не удалось\n");
+            System.out.print("Снятие не удалось\n");
         }
         return result;
     }
