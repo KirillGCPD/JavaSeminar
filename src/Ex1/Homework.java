@@ -30,6 +30,8 @@ public class Homework {
         System.out.println("Снятие: 50");
         depostAccount.take(50);
         System.out.printf("%.2f\n",depostAccount.getAmount());
+
+       
     }
     /*
      * 1. Создать класс "Счет в банке" - Account.
