@@ -11,7 +11,7 @@ package Ex3;
    * 2. Отсортировать список по возрастанию возраста, по убыванию зарплаты, и по наименованию отдела (в лексикографическом порядке) (вывести на консоль).
    * Подумать о том, какую сортирвку сделать по умолчанию (заложить в класс, интерфейс Comparable), а какие две сделать внешними (интерфейс Comparator).
    */
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private String name;
     private int age;
     private double salary;
@@ -29,7 +29,7 @@ public class Employee {
         return age;
     }
     public void setAge(int age) {
-        if (age<0) throw new IllegalArgumentException("Возраст не может быть отрицательным");
+        if (age < 0) throw new IllegalArgumentException("Возраст не может быть отрицательным");
         this.age = age;
         
     }
@@ -38,7 +38,7 @@ public class Employee {
         return salary;
     }
     public void setSalary(double salary) {
-        if (salary<0) throw new IllegalArgumentException("Зарплата не может быть отрицательной");
+        if (salary < 0) throw new IllegalArgumentException("Зарплата не может быть отрицательной");
         this.salary = salary;
     }
 
@@ -58,5 +58,14 @@ public class Employee {
         this.salary = salary;
         this.department = department;
     }
-
+    @Override
+    public String toString() {
+      
+        return String.format("Департамент: %s. \tСотрудник: %s. \tВозраст: %d. \tЗарплата: $%.0f", department,name,age,salary);
+    }
+    @Override
+    public int compareTo(Employee o) {
+        
+        return department.compareTo(o.department);
+    }
 }
